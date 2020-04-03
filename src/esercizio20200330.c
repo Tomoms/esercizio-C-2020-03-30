@@ -22,6 +22,11 @@ unsigned long fibonacci(unsigned int n)
 	return nums[2];
 }
 
+/*
+ * Fills an array with the first n + 1 values of
+ * Fibonacci's sequence.
+ * Returns a pointer to the first element of the array.
+ */
 unsigned long* fibonacci_array(unsigned int n)
 {
 	unsigned long* ret = calloc(n + 1, sizeof(unsigned long));
@@ -33,14 +38,5 @@ unsigned long* fibonacci_array(unsigned int n)
 
 int main(int argc, char *argv[])
 {
-	for (unsigned int i = 0; i < 93; i++) {
-		printf("Fibonacci(%u)\t=\t%lu\n", i, fibonacci(i));
-	}
-
-	unsigned int len = 20;
-	unsigned long* fib_array = fibonacci_array(len);
-	for (int i = 0; i <= len; i++)
-		printf("Reading from array - fibonacci(%u)\t=\t%lu\n", i, fib_array[i]);
-
 	return 0;
 }
