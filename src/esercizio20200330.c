@@ -30,6 +30,11 @@ unsigned long fibonacci(unsigned int n)
 unsigned long* fibonacci_array(unsigned int n)
 {
 	unsigned long* ret = calloc(n + 1, sizeof(unsigned long));
+	if (ret == NULL) {
+		perror("calloc() failed\n");
+		exit(EXIT_FAILURE);
+	}
+
 	for (unsigned int i = 0; i <= n; i++)
 		ret[i] = fibonacci(i);
 
@@ -39,6 +44,11 @@ unsigned long* fibonacci_array(unsigned int n)
 unsigned long* array_copy(unsigned long* ptr, int size)
 {
 	unsigned long* ret = calloc(size, sizeof(unsigned long));
+	if (ret == NULL) {
+		perror("calloc() failed\n");
+		exit(EXIT_FAILURE);
+	}
+
 	for (int i = 0; i < size; i++)
 		ret[i] = ptr[i];
 
